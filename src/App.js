@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useEffect,useState } from "react";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import {Routes,Route} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App=()=>{
+  return(
+  <div className="flex w-100vw h-100vh m-1  ">
+     
+     <Sidebar/>  
+
+     
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        
+      </Routes>
+      
+
+   </div>
+  )
 }
 
 export default App;
